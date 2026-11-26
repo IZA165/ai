@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C0F0C;--fg:#C9F5C9;--dim:#6FA56F;--bright:#5CFF7A;--bar:#1A211A;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{background:#050705;color:var(--fg);font:400 1.1rem/1.7 "JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  display:grid;place-items:center;padding:24px}
+.term{width:100%;max-width:720px;background:var(--bg);border:1px solid #2A3A2A;border-radius:8px;overflow:hidden;
+  box-shadow:0 0 40px rgba(92,255,122,.08)}
+.bar{background:var(--bar);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2A3A2A;font-size:.8rem;color:var(--dim)}
+.dot{width:12px;height:12px;border-radius:50%;background:#2F3F2F}
+.bar span{margin-left:8px}
+.screen{padding:24px 24px 32px;min-height:320px}
+p{margin:0}
+.dim{color:var(--dim)}
+.prompt{color:var(--bright);font-weight:700}
+.out{margin:6px 0 18px 0}
+.out a{display:block;width:max-content;max-width:100%;color:var(--fg);text-decoration:none;padding:0 6px;margin-left:-6px}
+.out a::before{content:"> ";color:var(--dim)}
+.out a:hover,.out a:focus-visible{background:var(--bright);color:var(--bg);outline:none}
+.out a:hover::before,.out a:focus-visible::before{color:var(--bg)}
+.cursor{display:inline-block;width:.6em;height:1.1em;background:var(--bright);vertical-align:text-bottom;margin-left:2px}
+@media (prefers-reduced-motion:no-preference){.cursor{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}}
+@media (max-width:480px){body{font-size:1rem;padding:12px}.screen{padding:18px}}
+</style>
+</head>
+<body>
+<div class="term">
+  <div class="bar" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>ai-revision</span></div>
+  <main class="screen">
+    <p><span class="prompt">user@ai-revision:~$</span> cat welcome.txt</p>
+    <p class="out dim">Welcome to AI Revision.<br>Choose an assistant to begin.</p>
+    <p><span class="prompt">user@ai-revision:~$</span> ls</p>
+    <nav class="out" aria-label="AI tools">
+      <a href="gemini.html">gemini.html</a>
+      <a href="claude.html">claude.html</a>
+    </nav>
+    <p><span class="prompt">user@ai-revision:~$</span> <span class="cursor" aria-hidden="true"></span></p>
+  </main>
+</div>
+</body>
+</html>
